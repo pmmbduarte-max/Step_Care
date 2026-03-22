@@ -478,7 +478,15 @@ function rIdent(app){
         </select>
       </div>
       <div class="field"><label>Unidade / Subunidade</label>
-        <input type="text" value="${d.unidade||''}" oninput="S.ident.unidade=this.value" placeholder="Ex: 2.º BIMec">
+        <select onchange="S.ident.unidade=this.value">
+          <option value="">Selecionar</option>
+          <optgroup label="Comandos Territoriais">
+            ${['Comando Territorial de Aveiro','Comando Territorial de Beja','Comando Territorial de Braga','Comando Territorial de Bragança','Comando Territorial de Castelo Branco','Comando Territorial de Coimbra','Comando Territorial de Évora','Comando Territorial de Faro','Comando Territorial da Guarda','Comando Territorial de Leiria','Comando Territorial de Lisboa','Comando Territorial da Madeira','Comando Territorial de Portalegre','Comando Territorial do Porto','Comando Territorial de Santarém','Comando Territorial de Setúbal','Comando Territorial de Viana do Castelo','Comando Territorial de Vila Real','Comando Territorial de Viseu','Comando Territorial dos Açores'].map(o=>`<option ${d.unidade===o?'selected':''} value="${o}">${o}</option>`).join('')}
+          </optgroup>
+          <optgroup label="Unidades e Órgãos">
+            ${['CO','EG','UCCF','UEPS','UAG','UAF','UI','CARI','CG','SS','UNT'].map(o=>`<option ${d.unidade===o?'selected':''} value="${o}">${o}</option>`).join('')}
+          </optgroup>
+        </select>
       </div>
     </div>
     <div class="field"><label>Encaminhamento</label>
