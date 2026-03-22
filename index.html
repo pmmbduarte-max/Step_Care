@@ -474,17 +474,25 @@ function rIdent(app){
       <div class="field"><label>Posto / Categoria</label>
         <select onchange="S.ident.posto=this.value">
           <option value="">Selecionar</option>
-          ${['Tenente-General','Major-General','Brigadeiro-General','Coronel','Tenente-Coronel','Major','Capitão','Tenente','Alferes','Sargento-Mor','Sargento-Chefe','Sargento-Ajudante','Primeiro-Sargento','Segundo-Sargento','Furriel','Cabo-Mor','Cabo-Chefe','Cabo','Guarda-Principal','Guarda','Civil quadro','Familiar','Outro'].map(o=>`<option ${d.posto===o?'selected':''}>${o}</option>`).join('')}
+          ${['Oficial General','Oficial Superior','Capitão','Oficial Subalterno','Sargento-Mor','Sargento-Chefe','Sargento-Ajudante','Sargento','Cabo','Guarda','Pessoal Civil','Outro'].map(o=>`<option ${d.posto===o?'selected':''}>${o}</option>`).join('')}
         </select>
       </div>
       <div class="field"><label>Unidade / Subunidade</label>
-        <input type="text" value="${d.unidade||''}" oninput="S.ident.unidade=this.value" placeholder="Ex: 2.º BIMec">
+        <select onchange="S.ident.unidade=this.value">
+          <option value="">Selecionar</option>
+          <optgroup label="Comandos Territoriais">
+            ${['Comando Territorial de Aveiro','Comando Territorial de Beja','Comando Territorial de Braga','Comando Territorial de Bragança','Comando Territorial de Castelo Branco','Comando Territorial de Coimbra','Comando Territorial de Évora','Comando Territorial de Faro','Comando Territorial da Guarda','Comando Territorial de Leiria','Comando Territorial de Lisboa','Comando Territorial da Madeira','Comando Territorial de Portalegre','Comando Territorial do Porto','Comando Territorial de Santarém','Comando Territorial de Setúbal','Comando Territorial de Viana do Castelo','Comando Territorial de Vila Real','Comando Territorial de Viseu','Comando Territorial dos Açores'].map(o=>`<option ${d.unidade===o?'selected':''} value="${o}">${o}</option>`).join('')}
+          </optgroup>
+          <optgroup label="Unidades e Órgãos">
+            ${['CO','EG','UCCF','UEPS','UAG','UAF','UI','CARI','CG','SS','UNT'].map(o=>`<option ${d.unidade===o?'selected':''} value="${o}">${o}</option>`).join('')}
+          </optgroup>
+        </select>
       </div>
     </div>
     <div class="field"><label>Encaminhamento</label>
       <select onchange="S.ident.encaminhamento=this.value">
         <option value="">Selecionar</option>
-        ${['Iniciativa própria','Médico do Centro Clínico GNR','Comando / Chefia','Assistente social','Serviço de Urgência','Outro profissional de saúde'].map(o=>`<option ${d.encaminhamento===o?'selected':''}>${o}</option>`).join('')}
+        ${['Iniciativa própria','Médico do Centro Clínico GNR','Comando / Chefia','Assistente social','Linha de apoio','Serviço de Urgência','Outro profissional de saúde'].map(o=>`<option ${d.encaminhamento===o?'selected':''}>${o}</option>`).join('')}
       </select>
     </div>
     <div class="nav">
