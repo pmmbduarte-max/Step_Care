@@ -474,7 +474,7 @@ function rIdent(app){
       <div class="field"><label>Posto / Categoria</label>
         <select onchange="S.ident.posto=this.value">
           <option value="">Selecionar</option>
-          ${['Tenente-General','Major-General','Capitão','Brigadeiro-General','Coronel','Tenente-Coronel','Major','Capitão','Tenente','Alferes','Sargento-Mor','Sargento-Chefe','Sargento-Ajudante','Primeiro-Sargento','Segundo-Sargento','Furriel','Cabo-Mor','Cabo-Chefe','Cabo','Guarda-Principal','Guarda','Civil quadro','Familiar','Outro'].map(o=>`<option ${d.posto===o?'selected':''}>${o}</option>`).join('')}
+          ${['Tenente-General','Major-General','Brigadeiro-General','Coronel','Tenente-Coronel','Major','Capitão','Tenente','Alferes','Sargento-Mor','Sargento-Chefe','Sargento-Ajudante','Primeiro-Sargento','Segundo-Sargento','Furriel','Cabo-Mor','Cabo-Chefe','Cabo','Guarda-Principal','Guarda','Civil quadro','Familiar','Outro'].map(o=>`<option ${d.posto===o?'selected':''}>${o}</option>`).join('')}
         </select>
       </div>
       <div class="field"><label>Unidade / Subunidade</label>
